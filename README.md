@@ -83,4 +83,4 @@ python3 RFID_software/rfid_demo.py
 - Follow production best practices, such as configuring Nginx as a reverse proxy for Odoo.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the AGPL License.
