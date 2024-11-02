@@ -1,0 +1,47 @@
+<odoo>
+    <menuitem id="menu_rfid_management" name="RFID Management"/>
+    <record id="view_rfid_tag_tree" model="ir.ui.view">
+        <field name="name">rfid.tag.tree</field>
+        <field name="model">rfid.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="epc_code"/>
+                <field name="product_id"/>
+                <field name="last_scan_time"/>
+                <field name="last_scan_location"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="view_rfid_tag_form" model="ir.ui.view">
+        <field name="name">rfid.tag.form</field>
+        <field name="model">rfid.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="id" readonly="1"/>
+                        <field name="epc_code"/>
+                        <field name="product_id"/>
+                        <field name="last_scan_time" readonly="1"/>
+                        <field name="last_scan_location"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_rfid_tag" model="ir.actions.act_window">
+        <field name="name">RFID Tags</field>
+        <field name="res_model">rfid.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new RFID tag.
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_rfid_tag" name="RFID Tags" parent="menu_rfid_management" sequence="1" action="action_rfid_tag"/>
+    
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <!-- RFID User Group -->
+    <record id="group_rfid_user" model="res.groups">
+        <field name="name">RFID User</field>
+        <field name="category_id" ref="base.module_category_inventory_rfid"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- RFID Manager Group -->
+    <record id="group_rfid_manager" model="res.groups">
+        <field name="name">RFID Manager</field>
+        <field name="category_id" ref="base.module_category_inventory_rfid"/>
+        <field name="implied_ids" eval="[(4, ref('group_rfid_user'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+</odoo>
