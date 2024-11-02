@@ -69,7 +69,7 @@ If you do not have an RFID reader, you can simulate RFID scans using demo data:
 1. Use the Odoo interface to create demo RFID tags in the **RFID Tag** menu.
 2. Run the demo script in the `demos` folder to simulate scanning events, which will update stock and location changes as if they were triggered by a real RFID scan.
 ```bash
-python3 RFID_software/rfid_demo.py
+python3 demo.py
 ```
 
 ## References
